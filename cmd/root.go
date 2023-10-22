@@ -2,6 +2,9 @@ package cmd
 
 import (
 	"github.com/EscanBE/butler-installer/constants"
+	"github.com/EscanBE/butler-installer/types"
+	"github.com/EscanBE/butler-installer/utils"
+	libutils "github.com/EscanBE/go-lib/utils"
 	"github.com/spf13/cobra"
 	"os"
 )
@@ -21,7 +24,15 @@ func Execute() {
 	rootCmd.CompletionOptions.HiddenDefaultCmd = true    // hide the 'completion' subcommand
 	rootCmd.SetHelpCommand(&cobra.Command{Hidden: true}) // hide the 'help' subcommand
 
-	err := rootCmd.Execute()
+	operationUserInfo, err := utils.GetOperationUserInfo()
+	if err != nil {
+		libutils.PrintlnStdErr("ERR: failed to get operation user info:", err)
+		os.Exit(1)
+	}
+
+	ctx := types.NewContext(operationUserInfo)
+
+	err = rootCmd.ExecuteContext(types.WrapAppContext(ctx))
 	if err != nil {
 		os.Exit(1)
 	}
