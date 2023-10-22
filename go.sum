@@ -38,8 +38,8 @@ cloud.google.com/go/storage v1.14.0/go.mod h1:GrKmX003DSIwi9o29oFT7YDnHYwZoctc3f
 dmitri.shuralyov.com/gpu/mtl v0.0.0-20190408044501-666a987793e9/go.mod h1:H6x//7gZCb22OMCxBHrMx7a5I7Hp++hsVxbQ4BYO7hU=
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
 github.com/BurntSushi/xgb v0.0.0-20160522181843-27f122750802/go.mod h1:IVnqGOEym/WlBOVXweHU+Q+/VP0lqqI8lqeDx9IjBqo=
-github.com/EscanBE/go-lib v1.0.0 h1:Z/xOXRsZIOGm4UxeKnRbCHG5EU6E0rMqGV540Jq5PDA=
-github.com/EscanBE/go-lib v1.0.0/go.mod h1:eOjN6NnDLtG4cM++IWgVyESMg4zQVIiKSb7T32KJBsk=
+github.com/EscanBE/go-lib v1.1.0 h1:msqf6XNpsaUyjCA2ZR4w1qd41zKKrzkZ4B3Ey0vNAcE=
+github.com/EscanBE/go-lib v1.1.0/go.mod h1:eOjN6NnDLtG4cM++IWgVyESMg4zQVIiKSb7T32KJBsk=
 github.com/btcsuite/btcd/btcec/v2 v2.2.0 h1:fzn1qaOt32TuLjFlkzYSsBC35Q3KUjT1SwPxiMSCF5k=
 github.com/btcsuite/btcd/btcec/v2 v2.2.0/go.mod h1:U7MHm051Al6XmscBQ0BoNydpOTsFAn707034b5nY8zU=
 github.com/btcsuite/btcd/chaincfg/chainhash v1.0.1 h1:q0rUy8C/TYNBQS1+CGKw68tLOFYSNEs0TFnxxnS9+4U=

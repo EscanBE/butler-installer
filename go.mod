@@ -3,7 +3,7 @@ module github.com/EscanBE/go-app-name
 go 1.18
 
 require (
-	github.com/EscanBE/go-lib v1.0.0
+	github.com/EscanBE/go-lib v1.1.0
 	github.com/go-telegram-bot-api/telegram-bot-api/v5 v5.5.1
 	github.com/orcaman/concurrent-map/v2 v2.0.1
 	github.com/pkg/errors v0.9.1
