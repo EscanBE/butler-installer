@@ -3,8 +3,8 @@ package work
 import (
 	"context"
 	"fmt"
-	"github.com/EscanBE/go-app-name/database"
-	workertypes "github.com/EscanBE/go-app-name/work/types"
+	"github.com/EscanBE/butler-installer/database"
+	workertypes "github.com/EscanBE/butler-installer/work/types"
 	libapp "github.com/EscanBE/go-lib/app"
 	"github.com/EscanBE/go-lib/logging"
 	libutils "github.com/EscanBE/go-lib/utils"

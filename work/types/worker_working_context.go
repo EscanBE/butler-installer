@@ -1,7 +1,7 @@
 package types
 
 import (
-	"github.com/EscanBE/go-app-name/config"
+	"github.com/EscanBE/butler-installer/config"
 	"github.com/EscanBE/go-lib/logging"
 	"github.com/EscanBE/go-lib/telegram/bot"
 	cmap "github.com/orcaman/concurrent-map/v2"

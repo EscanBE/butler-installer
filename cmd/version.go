@@ -2,7 +2,7 @@ package cmd
 
 import (
 	"fmt"
-	"github.com/EscanBE/go-app-name/constants"
+	"github.com/EscanBE/butler-installer/constants"
 	"github.com/spf13/cobra"
 	"runtime"
 	"runtime/debug"

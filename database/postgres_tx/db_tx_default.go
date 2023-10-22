@@ -3,7 +3,7 @@ package pg_db_tx
 import (
 	"context"
 	"database/sql"
-	"github.com/EscanBE/go-app-name/database"
+	"github.com/EscanBE/butler-installer/database"
 )
 
 // type check to ensure interface is properly implemented

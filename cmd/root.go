@@ -1,8 +1,8 @@
 package cmd
 
 import (
-	"github.com/EscanBE/go-app-name/cmd/utils"
-	"github.com/EscanBE/go-app-name/constants"
+	"github.com/EscanBE/butler-installer/cmd/utils"
+	"github.com/EscanBE/butler-installer/constants"
 	"github.com/spf13/cobra"
 	"os"
 )

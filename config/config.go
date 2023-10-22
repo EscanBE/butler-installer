@@ -2,7 +2,7 @@ package config
 
 import (
 	"fmt"
-	"github.com/EscanBE/go-app-name/constants"
+	"github.com/EscanBE/butler-installer/constants"
 	libdbtypes "github.com/EscanBE/go-lib/database/types"
 	logtypes "github.com/EscanBE/go-lib/logging/types"
 	"github.com/pkg/errors"

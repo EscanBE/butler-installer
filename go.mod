@@ -1,4 +1,4 @@
-module github.com/EscanBE/go-app-name
+module github.com/EscanBE/butler-installer
 
 go 1.18
 
@@ -36,5 +36,3 @@ require (
 	gopkg.in/ini.v1 v1.67.0 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 )
-
-// replace github.com/EscanBE/go-lib => /Users/hungphamviet/Dev/Escan/github/EscanBE/go-lib

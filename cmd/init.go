@@ -2,8 +2,8 @@ package cmd
 
 import (
 	"fmt"
-	cmdutils "github.com/EscanBE/go-app-name/cmd/utils"
-	"github.com/EscanBE/go-app-name/constants"
+	cmdutils "github.com/EscanBE/butler-installer/cmd/utils"
+	"github.com/EscanBE/butler-installer/constants"
 	libutils "github.com/EscanBE/go-lib/utils"
 	"github.com/spf13/cobra"
 	"os"

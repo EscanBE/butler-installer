@@ -2,10 +2,10 @@ package cmd
 
 import (
 	"fmt"
-	"github.com/EscanBE/go-app-name/config"
-	"github.com/EscanBE/go-app-name/constants"
-	"github.com/EscanBE/go-app-name/work"
-	workertypes "github.com/EscanBE/go-app-name/work/types"
+	"github.com/EscanBE/butler-installer/config"
+	"github.com/EscanBE/butler-installer/constants"
+	"github.com/EscanBE/butler-installer/work"
+	workertypes "github.com/EscanBE/butler-installer/work/types"
 	libapp "github.com/EscanBE/go-lib/app"
 	libcons "github.com/EscanBE/go-lib/constants"
 	logtypes "github.com/EscanBE/go-lib/logging/types"

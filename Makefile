@@ -6,37 +6,21 @@ BUILD_DATE	:= $(shell date '+%Y-%m-%d')
 ###                                Build flags                              ###
 ###############################################################################
 
-LD_FLAGS = -X github.com/EscanBE/go-app-name/constants.VERSION=$(GIT_TAG) \
-            -X github.com/EscanBE/go-app-name/constants.COMMIT_HASH=$(COMMIT) \
-            -X github.com/EscanBE/go-app-name/constants.BUILD_DATE=$(BUILD_DATE)
+LD_FLAGS = -X github.com/EscanBE/butler-installer/constants.VERSION=$(GIT_TAG) \
+            -X github.com/EscanBE/butler-installer/constants.COMMIT_HASH=$(COMMIT) \
+            -X github.com/EscanBE/butler-installer/constants.BUILD_DATE=$(BUILD_DATE)
 
 BUILD_FLAGS := -ldflags '$(LD_FLAGS)'
-
-###############################################################################
-###                                  Test                                   ###
-###############################################################################
-
-test: go.sum
-	@echo "testing"
-	@go test -v ./... -race -coverprofile=coverage.txt -covermode=atomic
-.PHONY: test
 
 ###############################################################################
 ###                                  Build                                  ###
 ###############################################################################
 
 build: go.sum
-ifeq ($(OS),Windows_NT)
-	@echo "building goappnamed binary..."
+	@echo "Building Escan Butler binary..."
 	@echo "Flags $(BUILD_FLAGS)"
-	@go build -mod=readonly $(BUILD_FLAGS) -o build/goappnamed.exe ./cmd/goappnamed
+	@go build -mod=readonly $(BUILD_FLAGS) -o build/ebid.exe ./cmd/ebid
 	@echo "Builded successfully"
-else
-	@echo "building goappnamed binary..."
-	@echo "Flags $(BUILD_FLAGS)"
-	@go build -mod=readonly $(BUILD_FLAGS) -o build/goappnamed ./cmd/goappnamed
-	@echo "Builded successfully"
-endif
 .PHONY: build
 
 ###############################################################################
@@ -44,8 +28,8 @@ endif
 ###############################################################################
 
 install: go.sum
-	@echo "installing goappnamed binary..."
+	@echo "Installing Escan Butler binary..."
 	@echo "Flags $(BUILD_FLAGS)"
-	@go install -mod=readonly $(BUILD_FLAGS) ./cmd/goappnamed
+	@go install -mod=readonly $(BUILD_FLAGS) ./cmd/ebid
 	@echo "Installed successfully"
 .PHONY: install

@@ -4,8 +4,8 @@ import (
 	"context"
 	"database/sql"
 	"fmt"
-	"github.com/EscanBE/go-app-name/database"
-	dbtx "github.com/EscanBE/go-app-name/database/postgres_tx"
+	"github.com/EscanBE/butler-installer/database"
+	dbtx "github.com/EscanBE/butler-installer/database/postgres_tx"
 	libdbtypes "github.com/EscanBE/go-lib/database/types"
 	"github.com/EscanBE/go-lib/logging"
 )

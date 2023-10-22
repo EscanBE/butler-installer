@@ -1,8 +1,8 @@
 package config
 
 import (
-	"github.com/EscanBE/go-app-name/database"
-	"github.com/EscanBE/go-app-name/database/postgres"
+	"github.com/EscanBE/butler-installer/database"
+	"github.com/EscanBE/butler-installer/database/postgres"
 	"github.com/EscanBE/go-lib/logging"
 	"github.com/EscanBE/go-lib/telegram/bot"
 	libutils "github.com/EscanBE/go-lib/utils"
