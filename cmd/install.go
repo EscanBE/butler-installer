@@ -149,8 +149,6 @@ Needed information is a GitHub Fine Grained Access Token with readonly 'repo' sc
 				libutils.PrintlnStdErr("ERR: failed to clone Butler repository:", err)
 				os.Exit(1)
 			}
-
-			chownRecursive(localRepoDirPath)
 		} else {
 			err = execCmd("git", localRepoDirPath, "fetch", "--all")
 			if err != nil {
@@ -159,26 +157,24 @@ Needed information is a GitHub Fine Grained Access Token with readonly 'repo' sc
 			}
 		}
 
+		chownRecursive(localRepoDirPath)
+
 		err = execCmd("bash", localRepoDirPath, "-c", "git checkout $(git describe --tags `git rev-list --tags --max-count=1`)")
 		if err != nil {
 			libutils.PrintlnStdErr("ERR: failed to checkout latest tag of Butler repository:", err)
 			os.Exit(1)
 		}
 
-		installButler(localRepoDirPath)
+		err = execCmd("make", localRepoDirPath, "install")
+		if err != nil {
+			libutils.PrintlnStdErr("ERR: failed to install Butler:", err)
+			os.Exit(1)
+		}
 	},
 }
 
 func init() {
 	rootCmd.AddCommand(installCmd)
-}
-
-func installButler(localRepoDirPath string) {
-	err := execCmd("make", localRepoDirPath, "install")
-	if err != nil {
-		libutils.PrintlnStdErr("ERR: failed to install Butler:", err)
-		os.Exit(1)
-	}
 }
 
 func execCmd(name, dir string, args ...string) error {
