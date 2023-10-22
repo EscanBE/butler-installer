@@ -152,16 +152,17 @@ Needed information is a GitHub Fine Grained Access Token with readonly 'repo' sc
 
 			chownRecursive(localRepoDirPath)
 		} else {
-			err = execCmd("git", localRepoDirPath, "checkout", "main")
+			err = execCmd("git", localRepoDirPath, "fetch", "--all")
 			if err != nil {
-				libutils.PrintlnStdErr("ERR: failed to checkout 'main' branch of Butler repository:", err)
+				libutils.PrintlnStdErr("ERR: failed to fetch changes from Butler remote repository:", err)
 				os.Exit(1)
 			}
-			err = execCmd("git", localRepoDirPath, "pull")
-			if err != nil {
-				libutils.PrintlnStdErr("ERR: failed to pull changes from Butler remote repository:", err)
-				os.Exit(1)
-			}
+		}
+
+		err = execCmd("bash", localRepoDirPath, "-c", "git checkout $(git describe --tags `git rev-list --tags --max-count=1`)")
+		if err != nil {
+			libutils.PrintlnStdErr("ERR: failed to checkout latest tag of Butler repository:", err)
+			os.Exit(1)
 		}
 
 		installButler(localRepoDirPath)
