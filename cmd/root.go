@@ -1,14 +1,10 @@
 package cmd
 
 import (
-	"github.com/EscanBE/butler-installer/cmd/utils"
 	"github.com/EscanBE/butler-installer/constants"
 	"github.com/spf13/cobra"
 	"os"
 )
-
-// homeDir holds the home directory which was passed by flag `--home`, or default kinda `~/.binaryName`
-var homeDir string
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
@@ -29,14 +25,4 @@ func Execute() {
 	if err != nil {
 		os.Exit(1)
 	}
-}
-
-func init() {
-	cobra.OnInitialize(initConfig)
-
-	rootCmd.PersistentFlags().StringVar(&homeDir, constants.FLAG_HOME, utils.GetDefaultHomeDirectory(), "Specify the home directory location instead of default")
-}
-
-// initConfig reads in config file and ENV variables if set.
-func initConfig() {
 }
